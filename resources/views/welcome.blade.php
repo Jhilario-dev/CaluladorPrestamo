@@ -59,11 +59,11 @@
 </head>
 <body>
     
-    <fieldset>
+    <fieldset >
         <legend>Calcular</legend>
-            <div>
+            <div >
                 <label>Tipo de prestamo <br></label>
-                <select name="prestamo">
+                <select name="prestamo" id="prestamo">
                     <option>prestamo consumo</option>
                     <option>prestamo vehiculo</option>
                     <option>prestamo hipotecario</option>
@@ -71,13 +71,13 @@
                 </select>
                 <p></p>
                 <label>Tipo de cuota <br></label>
-                <select name="prestamo">
+                <select name="prestamo" id="cuota">
                     <option>cuota fija</option>
                     <option>capital fijo</option>
                 </select>
                 <p></p>
                 <label>monto del prestamo <br></label>
-                <input type="number" name="" id="">
+                <input type="number" name="" id="monto">
                 <p></p>
 
                 <table>
@@ -86,28 +86,33 @@
                         <th>Nro. de años</th>
                     </tr>
                     <tr>
-                        <td><input type="number" name="" id=""></td>
-                        <td><input type="number" name="" id=""></td>
+                        <td><input type="number" name="" id="nroMeses"></td>
+                        <td><input type="number" name="" id="nroAnios"></td>
                     </tr>
 
                 </table>
                 <p></p>
 
-                <input type="button" value="calcular">
+                <input type="button" value="calcular" onclick=''>
                 <input type="reset" value="Reset">
                 
-                
-                
             </div>
-            
-            
-
             <div>
 
             </div>
             <p id="resp"></p>
     </fieldset>
 
+<?php
+
+
+
+
+
+
+
+
+?>
 
     
 </body>
