@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <fieldset>
-            <h1>Calculara de prestamos: </h1>
+            <h1>Calculadora de prestamos: </h1>
             <form action="{{route('datos.show')}}" method="post">
                 @csrf
 
@@ -29,8 +29,8 @@
                 </div>
                  
                 <div class="input-group mb-3" >
-                <label class="input-group-text" for="inputGroupSelect01">cuotas</label>
-                <select class="form-select" id="inputGroupSelect01" name="cuota">
+                    <label class="input-group-text" for="inputGroupSelect01">cuotas</label>
+                    <select class="form-select" id="inputGroupSelect01" name="cuota">
                         <option value="">Choose...</option>
                         <option value="1">cuota fija</option>
                         <option value="2">capital fijo</option>

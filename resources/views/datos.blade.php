@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <fieldset>
-            <h1>Calculara de prestamos: </h1>
+            <h1>Calculadora de prestamos: </h1>
             <form action="{{route('datos.show')}}" method="post">
                 @csrf
                 
