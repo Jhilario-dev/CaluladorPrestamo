@@ -20,12 +20,17 @@
                 <div class="input-group mb-3" >
                     <label class="input-group-text" for="inputGroupSelect01">prestamo</label>
                     <select class="form-select form-select-sm" id="inp" name="prestamo" onchange="prest();">
-                      <option value=''>Choose...</option>
+                      <option value="">Choose...</option>
                       <option value="18" >prestamo consumo</option>
                       <option value="15">prestamo vehiculo</option>
                       <option value="13">prestamo hipotecario</option>
                       <option value="14">prestamo comercio</option>
                     </select>
+                    @error('prestamo')
+                        <br>
+                        <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                  
                 <div class="input-group mb-3" >
@@ -35,21 +40,41 @@
                         <option value="1">cuota fija</option>
                         <option value="2">capital fijo</option>
                     </select>
+                    @error('cuota')
+                        <br>
+                        <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                 
                 TASA DE INTERÉS (%):
-                <div>
-                    <input type="text" class="form-control" name="tasa" value="" id="ta" readonly>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" name="tasa" value="" id="ta">
+                    @error('tasa')
+                        <br>
+                        <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                
                  monto:
                 <div class="input-group mb-3">
                     <input type="number" name="monto" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    @error('monto')
+                        
+                        <small> *{{$message}}</small>
+
+                    @enderror
                 </div>
                 
                 Nro. de meses
                 <div class="input-group mb-3">
                     <input type="number" name="nroMeses" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    @error('nroMeses')
+                        <br>
+                        <small> *{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-lg">aceptar</button>

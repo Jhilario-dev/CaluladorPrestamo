@@ -27,6 +27,11 @@
                     <option value="13">prestamo hipotecario</option>
                     <option value="14">prestamo comercio</option>
                     </select>
+                    @error('prestamo')
+                    <br>
+                    <small>*{{$message}}</small>
+                    <br>
+                @enderror
                 </div>
                 
                 <div class="input-group mb-3" >
@@ -36,20 +41,40 @@
                         <option value="1">cuota fija</option>
                         <option value="2">capital fijo</option>
                     </select>
+                    @error('cuota')
+                        <br>
+                        <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                 TASA DE INTERÉS (%):
                 <div>
-                    <input type="text" class="tasa" name="tasa" value="" id="ta" readonly>
+                    <input type="number" class="form-control" name="tasa" value="" id="ta">
+                    @error('tasa')
+                        <br>
+                        <small>*{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
 
                 monto:
                 <div class="input-group mb-3">
                     <input type="number" name="monto" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    @error('monto')
+
+                        <small> *{{$message}}</small>
+
+                    @enderror
                 </div>
                 
                 Nro. de meses
                 <div class="input-group mb-3">
                     <input type="number" name="nroMeses" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    @error('nroMeses')
+                        <br>
+                        <small> *{{$message}}</small>
+                        <br>
+                    @enderror
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-lg">aceptar</button>
@@ -57,6 +82,32 @@
                 
             </form>
             <p id="resp">su cuota a paga es de:  DOP$ {{$resul}}</p>
+
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Num. pago</th>
+                    <th scope="col">capital</th>
+                    <th scope="col">interes</th>
+                    <th scope="col">cuota</th>
+                    <th scope="col">saldo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @for ($i = 0; $i < count($tabla); $i++)
+                    <tr>
+                    @for ($y = 0; $y < count($tabla[$i]); $y++)
+
+                        <td scope="row">{{$tabla[$i][$y]}}</td>
+
+                    @endfor
+                    </tr>
+
+                    @endfor
+                </tbody>
+              </table>
+
         </fieldset>
     </div>
     <script type="text/javascript">
