@@ -16,7 +16,8 @@ class CodigoController extends Controller
             'tasa'=>'required',
             'cuota'=>'required',
             'monto'=>'required',
-            'nroMeses'=>'required'
+            'nroMeses'=>'required',
+            'prestamo'=>'required'
         ]);
 
         try{
@@ -61,6 +62,7 @@ class CodigoController extends Controller
                 $resul = $monto / $nroMeses;
                 
                 $tabla =[[]];
+                $tabla2 =[['null','null','null','null','null']];
 
                 $saldo = $monto;
 
@@ -95,7 +97,7 @@ class CodigoController extends Controller
         } catch (\Throwable $th) {
 
             $resul = 'revise los datos introducidos';
-            return view('datos', compact('resul', 'tabla'));
+            return view('datos', compact('resul'));
         }
     }
 
