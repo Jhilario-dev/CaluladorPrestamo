@@ -51,7 +51,7 @@
                
                 <h6>monto:</h6>
                 <div class="input-group mb-3">
-                    <input type="number" name="monto" class="form-control" id="pruevaaa" aria-label="Dollar amount (with dot and two decimal places)" required>
+                    <input type="text" name="monto" class="form-control" id="pruevaaa" aria-label="Dollar amount (with dot and two decimal places)" required>
                     @error('monto')
                     <div class="alert alert-danger" role="alert">
                         <small>*{{$message}}</small>
@@ -69,7 +69,7 @@
                     @enderror
                 </div>
                 
-                <button type="submit" id="btn" class="btn btn-warning" >aceptar</button>
+                <button type="submit" id="btn" class="btn btn-warning">aceptar</button>
                 <button type="reset" id="btn"class="btn btn-warning">resetear</button>
                 
             </form>
@@ -80,8 +80,8 @@
 
 @section('js')
 <script>
-// $(document).ready(function(){
-//     $('#pruevaaa').mask('000,000,000,000,000. 00', {reverse: true});
-// });
+$(document).ready(function(){
+    $('#pruevaaa').mask('000,000,000,000,000.00', {reverse: true});
+});
 </script>
 @endsection

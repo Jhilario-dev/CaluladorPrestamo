@@ -35,7 +35,7 @@
 
                 <h6>monto:</h6>
                 <div class="input-group mb-3">
-                    <input type="number" name="monto" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+                    <input type="text" name="monto" class="form-control" id="pruevaaa" aria-label="Dollar amount (with dot and two decimal places)" required>
                 </div>
                 
                 <h6>Nro. de meses:</h6>
@@ -65,6 +65,7 @@
               </tr>
             </thead>
             <tbody>
+                <!--ordenado de tabla de amortizacion-->
                 @for ($i = 0; $i < count($tabla); $i++)
                 <tr>
                 @for ($y = 0; $y < count($tabla[$i]); $y++)
@@ -79,4 +80,11 @@
             </tbody>
           </table>
     </div>
+@endsection
+@section('js')
+<script>
+$(document).ready(function(){
+    $('#pruevaaa').mask('000,000,000,000,000.00', {reverse: true});
+});
+</script>
 @endsection

@@ -53,8 +53,7 @@
         }
 
         .form-select:focus { 
-
-            box-shadow: 0px 0px 3px 2px  yellow;
+            box-shadow: 0px 0px 3px 2px  rgb(253, 186, 3);
         }
 
         input{
@@ -64,8 +63,12 @@
         }
 
         input[type=number]:focus {
-            border-color: yellow;
-            box-shadow: 0px 0px 3px 2px  yellow;
+            border-color: rgb(253, 186, 3);
+            box-shadow: 0px 0px 3px 2px  rgb(253, 186, 3);
+        }
+        input[type=text]:focus {
+            border-color: rgb(253, 186, 3);
+            box-shadow: 0px 0px 3px 2px  rgb(253, 186, 3);
         }
         #btn{
             border: none;
@@ -86,7 +89,7 @@
 
     <!--script -->
     <script type="text/javascript">
-
+            //pasar los datos del select de prestamo al input de porcentaje
             function prest(){
                 var x = document.getElementById("inp");
                 var y = x.options[x.selectedIndex].value;

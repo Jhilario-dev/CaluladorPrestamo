@@ -29,6 +29,8 @@ class CodigoController extends Controller
             $monto = $request->monto;
             $nroMeses = $request->nroMeses;
             
+            $monto=str_replace(',','',$monto);
+
             $prestamo = ($prestamo/12) / 100;
         
             if($cuota == 1){
@@ -37,7 +39,7 @@ class CodigoController extends Controller
                 $tabla =[[]];
                 
                 $saldo = $monto;
-
+                // llenado de tabla de amortizacion
                 for ($i=1; $i <= $nroMeses; $i++) { 
                      
                     $interes = $saldo * $prestamo;
@@ -65,7 +67,7 @@ class CodigoController extends Controller
                 $tabla2 =[['null','null','null','null','null']];
 
                 $saldo = $monto;
-
+                // llenado de tabla de amortizacion
                 for ($i=1; $i <= $nroMeses; $i++) { 
                     
                     $interes = $saldo * $prestamo;
@@ -96,7 +98,7 @@ class CodigoController extends Controller
             
         } catch (\Throwable $th) {
 
-            $resul = 'revise los datos introducidos';
+            $resul = 'revisé los datos introducidos';
             return view('datos', compact('resul'));
         }
     }
